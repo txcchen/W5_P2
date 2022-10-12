@@ -24,5 +24,4 @@
         android:background="#00FFFF"
         tools:layout="@layout/fragment_image_rating" />
 
-
 </LinearLayout>
