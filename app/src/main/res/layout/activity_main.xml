@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/leftright"
-        android:name="com.example.ratingbar.LeftRightFragment"
+    <fragment
+        android:id="@+id/LRFragment"
+        android:name="com.example.rating.LeftRightFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="0dp"
-        tools:layout="@layout/fragment_leftright"/>
+        tools:layout="@layout/fragment_left_right" />
 
     <FrameLayout
-        android:id="@+id/image_rating"
-        android:name="com.example.ratingbar.ImageRatingFragment"
+        android:id="@+id/ImgFragFrame"
+        android:name="com.example.rating.ImageRatingFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="0dp"
-        tools:layout="@layout/fragment_imgrating" />
+        android:layout_weight="5"
+        android:background="#00FFFF"
+        tools:layout="@layout/fragment_image_rating" />
+
 
 </LinearLayout>

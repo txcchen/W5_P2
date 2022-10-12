@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Ratingbar"
+rootProject.name = "rating"
 include ':app'
