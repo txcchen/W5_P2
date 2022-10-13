@@ -14,8 +14,7 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="Left"
-        android:onClick="buttonClick" />
+        android:text="Left" />
 
     <Button
         android:id="@+id/right"
@@ -23,7 +22,6 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="Right"
-        android:onClick="buttonClick"/>
+        android:text="Right" />
 
 </LinearLayout>

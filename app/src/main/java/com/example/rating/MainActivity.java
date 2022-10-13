@@ -12,41 +12,37 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements LeftRightFragment.LRButtons{
-
-    ImageView imgView;
-    static int index = 1;
+public class MainActivity extends AppCompatActivity implements LeftRightFragment.leftRightFragmentListener,
+    ImageRatingFragment.ImageRatingFragmentListener{
+//    ImageView imgView;
+//    static int index = 1;
+    private LeftRightFragment leftRightFrag;
+    private ImageRatingFragment imgRatingFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager manager= getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
 
-        ImageRatingFragment imgf = new ImageRatingFragment();
-        transaction.add(R.id.ImgFragFrame, imgf);
-        transaction.commit();
+        leftRightFrag = new LeftRightFragment();
+        imgRatingFrag = new ImageRatingFragment();
 
-
+        // FragmentManager manager= getSupportFragmentManager();
+        // FragmentTransaction transaction = manager.beginTransaction();
+        // transaction.commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.LRFragFrame, leftRightFrag)
+                .replace(R.id.ImgFragFrame, imgRatingFrag)
+                .commit();
     }
 
     @Override
-    public void buttonClick(View view) {
-        Button btn = (Button) view;
-        String btnText = btn.getText().toString();
+    public void onInputSent(String input) {
+        ImageRatingFragment.updateImgView(input);
+    }
 
-        if(btnText.equalsIgnoreCase("LEFT") && index > 0){
-            index--;
-        }
-        if(btnText.equalsIgnoreCase("RIGHT") &&  index < ImageRatingFragment.imgNames.length-1 ){
-            index++;
-        }
-        //else do nothing to the index--stay on same view
-        Integer imgName = ImageRatingFragment.imgNames[index];
-        Integer rating = ImageRatingFragment.ratingNums[index];
-        ImageRatingFragment.imgView.setImageResource(imgName);
-        ImageRatingFragment.ratingB.setRating(rating);
+    @Override
+    public void onInputReceiver(CharSequence input) {
     }
 }

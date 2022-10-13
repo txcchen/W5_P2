@@ -7,8 +7,8 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/LRFragment"
+    <FrameLayout
+        android:id="@+id/LRFragFrame"
         android:name="com.example.rating.LeftRightFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
