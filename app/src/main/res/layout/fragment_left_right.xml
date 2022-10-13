@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".LeftRightFragment"
-    android:layout_marginBottom="0dp"
-    android:background="#FF00FF">
+    android:layout_marginBottom="0dp">
 
     <!-- TODO: Update blank fragment layout -->
     <Button

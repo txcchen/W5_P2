@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginTop="30dp"
         tools:layout="@layout/fragment_left_right" />
 
     <FrameLayout
@@ -20,7 +21,7 @@
         android:name="com.example.rating.ImageRatingFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="6"
         tools:layout="@layout/fragment_image_rating" />
 
 
