@@ -23,4 +23,5 @@
         android:layout_weight="5"
         tools:layout="@layout/fragment_image_rating" />
 
+
 </LinearLayout>

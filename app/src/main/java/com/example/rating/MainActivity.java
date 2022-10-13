@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LeftRightFragment.LRButtons {
 
     ImageView imgView;
     int index = 1;
