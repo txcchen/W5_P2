@@ -28,8 +28,9 @@ public class LeftRightFragment extends Fragment {
         // Required empty public constructor
     }
 
-    //interface
-//    public interface LRButtons{
+    public interface LRButtons{
+       void buttonClick(View view);
+    }
 //    }
 
     /**

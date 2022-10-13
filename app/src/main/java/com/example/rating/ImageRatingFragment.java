@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +21,9 @@ public class ImageRatingFragment extends Fragment{
 
     View view;
     static ImageView imgView;
+    protected static Integer[] imgNames = {R.drawable.cat, R.drawable.cat_screech, R.drawable.cat_flower};
+    protected static Integer[] ratingNums = {3, 5, 4};
+    static RatingBar ratingB;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,6 +77,7 @@ public class ImageRatingFragment extends Fragment{
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_image_rating, container, false);
         imgView = view.findViewById(R.id.imageView);
+        ratingB = view.findViewById(R.id.ratingBar);
         return view;
     }
 }
