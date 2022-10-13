@@ -12,10 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements LeftRightFragment.LRButtons {
+public class MainActivity extends AppCompatActivity implements LeftRightFragment.LRButtons{
 
     ImageView imgView;
-    int index = 1;
+    static int index = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements LeftRightFragment
         ImageRatingFragment imgf = new ImageRatingFragment();
         transaction.add(R.id.ImgFragFrame, imgf);
         transaction.commit();
+
 
     }
 
@@ -47,7 +48,5 @@ public class MainActivity extends AppCompatActivity implements LeftRightFragment
         Integer rating = ImageRatingFragment.ratingNums[index];
         ImageRatingFragment.imgView.setImageResource(imgName);
         ImageRatingFragment.ratingB.setRating(rating);
-
-
     }
 }

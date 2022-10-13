@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
  */
 public class ImageRatingFragment extends Fragment{
 
+    Integer i = 0;
     View view;
     static ImageView imgView;
     protected static Integer[] imgNames = {R.drawable.cat, R.drawable.cat_screech, R.drawable.cat_flower};
@@ -37,6 +39,9 @@ public class ImageRatingFragment extends Fragment{
     public ImageRatingFragment() {
         // Required empty public constructor
     }
+
+
+
 
     //getter
     public static View getImgView(){
@@ -78,6 +83,19 @@ public class ImageRatingFragment extends Fragment{
         view = inflater.inflate(R.layout.fragment_image_rating, container, false);
         imgView = view.findViewById(R.id.imageView);
         ratingB = view.findViewById(R.id.ratingBar);
+
+        ratingB.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                i = MainActivity.index;
+                ratingB.setRating(v);
+                ratingNums[i] = (int) v;
+//                Log.d("ratingNUM CHANGED", String.valueOf(ratingNums[i]));
+            }
+
+        });
+
+
         return view;
     }
 }
